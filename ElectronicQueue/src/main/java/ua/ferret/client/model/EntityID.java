@@ -10,13 +10,10 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @MappedSuperclass
 public class EntityID {
 
 	@Id
-	@JsonIgnore
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "id", columnDefinition = "BINARY(16)")
